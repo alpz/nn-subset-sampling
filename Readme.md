@@ -42,11 +42,15 @@ Model Explanation for text classification on 20Newsgroups
 In this case the test data and test predictions of the model to be explained are stored in out/20ng
 
 Run pre-trained model on 20newsgroups with differentiable set size with average size 50 on the test data and predictions stored in out/20ng.
+
 `python train_l2x_text.py --diffk --resume --eval --t 1 --correct`
+
 This should give a post hoc accuracy of over 68% and save some samples in the experiment output directory. The accuracy without the correction is slightly lower.
 
 You can train a new explainer for the predictions stored in out/20ng by running
-python train_l2x_text.py
+
+`python train_l2x_text.py`
+
 You can set the subset_size and diffk to change the subset size and whether k is differentiable and whether to apply the inclusion probability correction.
 
 To train a new model to be explained download the 20newsgroups data to the "~/datasets" directory and GLoVe embeddings to the embeddings directory.
